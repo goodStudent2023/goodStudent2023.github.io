@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Profile</title>
+    <link href="./style.css" rel="stylesheet" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="list-container">
+        <ul class="right-list">
+            <li><a class="link" href="#introduction">INTRODUCTION</a></li>
+            <li><a class="link" href="#experience">EXPERIENCE</a></li>
+            <li><a class="link" href="#skill">SKILL</a></li>
+            <li><a class="link" href="#more">MORE</a></li>
+        </ul>
+    </div>
+    <br><br><br>
+    <div class="resume-container" id="introduction">
+        <br><br><br>
+        <div class="inside-container">
+            <center>
+                <h1>自我介紹</h1>
+            </center>
+            <p>me</p>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="resume-container" id="experience">
+        <br><br><br>
+        <div class="inside-container">
+            <center>
+                <h1>經歷</h1>
+            </center>
+            <div class="table-container">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>我</th>
+                        <th>他</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>John</td>
+                        <td>Mary</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        
+    </div>
+    <br><br><br>
+    <div class="resume-container" id="skill">
+        <br><br><br>
+        <div class="inside-container">
+            <center>
+                <h1>專長</h1>
+            </center>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="three-div" id="more">
+        <div class="more-container">
+            <h1>更多</h1>
+            <img class="img" src="1.jpg">
+        </div>
+        <div class="more-container">
+            <h1>更多</h1>
+            <img class="img" src="1.jpg">
+        </div>
+        <div class="more-container">
+            <h1>更多</h1>
+            <img class="img" src="1.jpg">
+        </div>     
+    </div>
+
+    <button id="myButton">Click Me</button>
+
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#myButton').click(function() {
+                $.ajax({
+                    url: 'myScript.php',
+                    type: 'POST',
+                    success: function(response) {
+                        $('#result').html(response);
+                    }
+                });
+            });
+        });
+    </script>
+
+    
+    
+
+    
+</body>
+<script>
+    window.addEventListener('scroll', function() {
+        var container = document.querySelector('list-container');
+        if (window.pageYOffset > 0) {
+            container.classList.add('scrolled');
+        } else {
+            container.classList.remove('scrolled');
+        }
+    });
+</script>
+
+<script>
+    window.addEventListener('beforeunload', function() {
+        window.scrollTo(0, 0);
+    });
+</script>
+
+<script>
+    var links = document.querySelectorAll('.link');
+
+    links.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+    var currentLink = this; // 当前点击的链接
+    currentLink.classList.add('clicked');
+
+    setTimeout(function() {
+      currentLink.classList.remove('clicked');
+    }, 2000);
+  });
+});
+</script>
+</html>
