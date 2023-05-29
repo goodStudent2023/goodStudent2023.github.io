@@ -1,0 +1,22 @@
+/*(3)、(6)*/
+.word {
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(86, 96, 246);
+}
+.prize {
+    font-size: larger;
+    color:red ;
+}
+body {
+    background-color: antiquewhite;
+}
+.container {
+    border:2px solid black; 
+    border-radius: 10px; 
+    background-color:rgb(192, 245, 245);
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    text-align: center;
+}
